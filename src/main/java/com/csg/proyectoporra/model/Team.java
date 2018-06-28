@@ -29,8 +29,6 @@ import lombok.Setter;
 @Table(name = "teams")
 @Builder(toBuilder = true)
 @NoArgsConstructor
-@Setter
-@Getter
 public class Team implements Serializable {
 
     @Id
