@@ -1,6 +1,6 @@
-package com.csg.proyectoporra.repository;
+package com.github.csegu.porrafutbol.repository;
 
-import com.csg.proyectoporra.model.Team;
+import com.github.csegu.porrafutbol.model.Team;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

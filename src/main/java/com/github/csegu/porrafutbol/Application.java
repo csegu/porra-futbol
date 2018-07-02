@@ -1,4 +1,4 @@
-package com.csg.proyectoporra;
+package com.github.csegu.porrafutbol;
 
 /**
  *

@@ -1,7 +1,7 @@
-package com.csg.proyectoporra.controller;
+package com.github.csegu.porrafutbol.controller;
 
-import com.csg.proyectoporra.dto.TeamDto;
-import com.csg.proyectoporra.service.TeamService;
+import com.github.csegu.porrafutbol.dto.TeamDto;
+import com.github.csegu.porrafutbol.service.TeamService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +24,7 @@ public class TeamController {
     
     
     @RequestMapping(method = RequestMethod.GET)
-    public List<TeamDto> obtenerUsuarios() {
+    public List<TeamDto> obtenerEquipos() {
         return teamService.listTeams();
     }
 /*
@@ -39,7 +39,7 @@ public class TeamController {
     }
 */
     @RequestMapping(method = RequestMethod.POST)
-    public void insertarUsuario(@RequestBody TeamDto teamDto) {
+    public void insertarEquipo(@RequestBody TeamDto teamDto) {
         teamService.addTeam(teamDto);
     }
     

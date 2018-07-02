@@ -1,4 +1,4 @@
-package com.csg.proyectoporra.dto;
+package com.github.csegu.porrafutbol.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

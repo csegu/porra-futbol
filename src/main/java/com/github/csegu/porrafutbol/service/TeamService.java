@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.csg.proyectoporra.service;
+package com.github.csegu.porrafutbol.service;
 
-import com.csg.proyectoporra.dto.TeamDto;
-import com.csg.proyectoporra.model.Team;
-import com.csg.proyectoporra.repository.TeamRepository;
+import com.github.csegu.porrafutbol.dto.TeamDto;
+import com.github.csegu.porrafutbol.model.Team;
+import com.github.csegu.porrafutbol.repository.TeamRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
