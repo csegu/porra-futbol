@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.csegu.porrafutbol.service;
 
 import com.github.csegu.porrafutbol.dto.TeamDto;
@@ -10,18 +5,17 @@ import com.github.csegu.porrafutbol.model.Team;
 import com.github.csegu.porrafutbol.repository.TeamRepository;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author Cristian Segura <jordison@gmail.com>
- */
+@Slf4j
 @Service
+@AllArgsConstructor(onConstructor = @__({@Autowired}))
 public class TeamService {
     
-    @Autowired
     private TeamRepository teamRepository;
     
     @Transactional

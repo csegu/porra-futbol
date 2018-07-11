@@ -9,17 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
- *
- * @author Cristian Segura <jordison@gmail.com>
- */
 @Component
 public class Initializer implements CommandLineRunner{
 
     @Autowired
     private TeamRepository TeamRepository;
     
-    Logger logger = LoggerFactory.getLogger("chapters.introduction.HelloWorld1");
+    Logger logger = LoggerFactory.getLogger("Inicio de la aplicacion");
 
 
     @Override
