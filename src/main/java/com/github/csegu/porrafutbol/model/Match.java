@@ -10,16 +10,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
+/**
+ *
+ * @author Cristian Segura <jordison@gmail.com>
+ */
 @Entity
-@Data
 @AllArgsConstructor
 @Table(name = "matchs")
-@Builder(toBuilder = true)
-@NoArgsConstructor
 public class Match implements Serializable {
     
     @Id

@@ -3,19 +3,25 @@ package com.github.csegu.porrafutbol.controller;
 import com.github.csegu.porrafutbol.dto.TeamDto;
 import com.github.csegu.porrafutbol.service.TeamService;
 import java.util.List;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *
+ * @author Cristian Segura <jordison@gmail.com>
+ */
 @RestController
 @RequestMapping(path = "/teams")
-@AllArgsConstructor(onConstructor = @__({@Autowired}))
 public class TeamController {
     
+    
+    @Autowired
     private TeamService teamService;
+    
     
     @RequestMapping(method = RequestMethod.GET)
     public List<TeamDto> obtenerEquipos() {
