@@ -4,12 +4,10 @@ import com.github.csegu.porrafutbol.model.Team;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class MatchDto {
 
     private Long matchId;

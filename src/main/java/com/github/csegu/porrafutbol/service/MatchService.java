@@ -15,26 +15,28 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @AllArgsConstructor(onConstructor = @__({@Autowired}))
 public class MatchService {
-    
+
     private MatchRepository matchRepository;
 
     @Transactional
     public void addMatch(MatchDto matchDto) {
-        Match match = new Match(matchDto.getMatchId(),matchDto.getTeam1(),matchDto.getTeam2(),
-        matchDto.getGoalsTeam1(),matchDto.getGoalsTeam2(),matchDto.getResult());
+        Match match = new Match(matchDto.getMatchId(), matchDto.getTeam1(), matchDto.getTeam2(), matchDto.getGoalsTeam1(), matchDto.getGoalsTeam2(), matchDto.getResult());
         matchRepository.save(match);
     }
-    
+
     public List<MatchDto> listMatchs() {
         return matchRepository.findAll().stream().map(MatchService::map).collect(Collectors.toList());
     }
 
     public MatchDto findById(Long id) {
-        return MatchService.map(matchRepository.findById(id).get());
+        return MatchService.map(matchRepository.getOne(id));
     }
-    
-    public static MatchDto map(Match match){     
-        return new MatchDto(match.getMatchId(),match.getTeam1(),match.getTeam2(),
-        match.getGoalsTeam1(),match.getGoalsTeam2(),match.getResult());
+
+    public static MatchDto map(Match match) {
+        MatchDto result = null;
+        if (match != null) {
+            result = new MatchDto(match.getMatchId(), match.getTeam1(), match.getTeam2(), match.getGoalsTeam1(), match.getGoalsTeam2(), match.getResult());
+        }
+        return result;
     }
 }

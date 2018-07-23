@@ -15,30 +15,32 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @AllArgsConstructor(onConstructor = @__({@Autowired}))
 public class TeamService {
-    
+
     private TeamRepository teamRepository;
-    
+
     @Transactional
     public void addTeam(TeamDto teamDto) {
         Team team = new Team(teamDto.getId(), teamDto.getName());
         teamRepository.save(team);
     }
-    
+
     public TeamDto getTeam(long id) {
         return map(teamRepository.findTeamById(id));
     }
-    
+
     public TeamDto findTeam(String name) {
         return map(teamRepository.findTeamByName(name));
     }
-    
+
     public List<TeamDto> listTeams() {
         return teamRepository.ListAllTeams().stream().map(TeamService::map).collect(Collectors.toList());
     }
-    
-    public static TeamDto map(Team team){
-        
-        return new TeamDto(team.getId(), team.getName());
+
+    public static TeamDto map(Team team) {
+        TeamDto result = null;
+        if (team != null) {
+            result = new TeamDto(team.getId(), team.getName());
+        }
+        return result;
     }
-    
 }
