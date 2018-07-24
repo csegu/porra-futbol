@@ -10,7 +10,7 @@ addons:
       secure: ${SONARCLOUD_TOKEN}
       
 script:
-  - mvn clean sonar:sonar
+  - mvn clean install sonar:sonar
 
 cache:
   directories:
