@@ -6,7 +6,7 @@ jdk:
 
 addons:
   sonarcloud:
-    organization: "porra-futbol-github"
+    organization: "dperezcabrera-github"
     token:
       secure: ${SONARCLOUD_TOKEN}
       
