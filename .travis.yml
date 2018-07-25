@@ -3,12 +3,6 @@ sudo: false
 
 jdk:
 - oraclejdk8
-
-addons:
-  sonarcloud:
-    organization: "csegu-github"
-    token:
-      secure: ${SONARCLOUD_TOKEN}
       
 script:
   - mvn clean install sonar:sonar \
