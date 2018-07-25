@@ -11,7 +11,10 @@ addons:
       secure: ${SONARCLOUD_TOKEN}
       
 script:
-  - mvn clean install sonar:sonar
+  - mvn clean install sonar:sonar \
+  -Dsonar.organization=csegu-github \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.login=38e8a52faa0f6b8209191c9fd8601dc074b7da8f
 
 cache:
   directories:
