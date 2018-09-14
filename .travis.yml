@@ -11,9 +11,7 @@ addons:
       secure: ${SONARCLOUD_TOKEN}
       
 script:
-  - mvn clean install sonar:sonar -Dsonar.projectKey=csegu_porra-futbol \
-  -Dsonar.organization=csegu-github \
-  -Dsonar.host.url=https://sonarcloud.io
+  - mvn clean install sonar:sonar -Dsonar.projectKey=csegu_porra-futbol -Dsonar.organization=csegu-github -Dsonar.host.url=https://sonarcloud.io
 
 cache:
   directories:
