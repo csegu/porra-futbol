@@ -40,12 +40,6 @@ public class Match implements Serializable {
     @JoinColumn(nullable = false)
     private Team team2;
     
-    @Column
-    private int goalsTeam1;
-    
-    @Column
-    private int goalsTeam2;
-    
-    @Column
-    private String result;
+    @JoinColumn(nullable = false)
+    private Result result;
 }

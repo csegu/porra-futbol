@@ -33,7 +33,7 @@ public class TeamService {
     }
 
     public List<TeamDto> listTeams() {
-        return teamRepository.ListAllTeams().stream().map(TeamService::map).collect(Collectors.toList());
+        return teamRepository.listAllTeams().stream().map(TeamService::map).collect(Collectors.toList());
     }
 
     public static TeamDto map(Team team) {

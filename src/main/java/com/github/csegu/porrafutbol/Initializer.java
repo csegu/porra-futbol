@@ -13,15 +13,15 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor(onConstructor = @__({@Autowired}))
 public class Initializer implements CommandLineRunner {
 
-    private TeamRepository TeamRepository;
+    private TeamRepository teamRepository;
 
     @Override
     public void run(String... args) throws Exception {
         log.info("Application started with command-line arguments: {} . \n To kill this application, press Ctrl + C.", (Object)args);
-        TeamRepository.save(new Team(1L, "Real Madrid C.F."));
-        TeamRepository.save(new Team(2L, "F.C. Barcelona"));
-        TeamRepository.save(new Team(3L, "Bayern Munchen"));
-        TeamRepository.save(new Team(4L, "Juventus"));
+        teamRepository.save(new Team(1L, "Real Madrid C.F."));
+        teamRepository.save(new Team(2L, "F.C. Barcelona"));
+        teamRepository.save(new Team(3L, "Bayern Munchen"));
+        teamRepository.save(new Team(4L, "Juventus"));
         log.trace("Carga inicial de equipos.");
     }
 }

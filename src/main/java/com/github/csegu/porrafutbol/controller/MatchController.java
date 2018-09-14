@@ -18,7 +18,7 @@ public class MatchController {
     private MatchService matchService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<MatchDto>> ObtenerPartidos() {
+    public ResponseEntity<List<MatchDto>> obtenerPartidos() {
          return ResponseEntity.ok(matchService.listMatchs());
     }
     
