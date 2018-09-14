@@ -7,6 +7,7 @@ jdk:
 addons:
   sonarcloud:
     organization: "csegu-github"
+    project-key: "csegu_porra-futbol"
     token:
       secure: ${SONARCLOUD_TOKEN}
       
