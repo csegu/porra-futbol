@@ -6,6 +6,7 @@
 package com.github.csegu.porrafutbol.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,14 +33,26 @@ public class Match implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long matchId;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false)
-    private Team team1;
+    @Column
+    private Integer matchDay;
+    
+    @Column
+    private Group group;
+    
+    @Column
+    private LocalDate matchDate;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(nullable = false)
-    private Team team2;
+    private Team homeTeam;
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false)
+    private Team awayTeam;
     
     @JoinColumn(nullable = false)
     private Result result;
+    
+    @Column
+    private String venue;
 }

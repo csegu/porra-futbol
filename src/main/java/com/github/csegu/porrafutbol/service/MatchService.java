@@ -20,7 +20,8 @@ public class MatchService {
 
     @Transactional
     public void addMatch(MatchDto matchDto) {
-        Match match = new Match(matchDto.getMatchId(), matchDto.getTeam1(), matchDto.getTeam2(),matchDto.getResult());
+        Match match = new Match(matchDto.getMatchId(), matchDto.getMatchDay(), matchDto.getGroup(), 
+                matchDto.getMatchDate(), matchDto.getHomeTeam(), matchDto.getAwayTeam(),matchDto.getResult(), matchDto.getVenue());
         matchRepository.save(match);
     }
 
@@ -35,7 +36,8 @@ public class MatchService {
     public static MatchDto map(Match match) {
         MatchDto result = null;
         if (match != null) {
-            result = new MatchDto(match.getMatchId(), match.getTeam1(), match.getTeam2(), match.getResult());
+            result = new MatchDto(match.getMatchId(), match.getMatchDay(), match.getGroup(), 
+                match.getMatchDate(), match.getHomeTeam(), match.getAwayTeam(),match.getResult(), match.getVenue());
         }
         return result;
     }

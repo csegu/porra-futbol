@@ -1,7 +1,9 @@
 package com.github.csegu.porrafutbol.dto;
 
+import com.github.csegu.porrafutbol.model.Group;
 import com.github.csegu.porrafutbol.model.Result;
 import com.github.csegu.porrafutbol.model.Team;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +14,11 @@ import lombok.NoArgsConstructor;
 public class MatchDto {
 
     private Long matchId;
-    private Team team1;
-    private Team team2;
+    private Integer matchDay;
+    private Group group;
+    private LocalDate matchDate;
+    private Team homeTeam;
+    private Team awayTeam;
     private Result result;
+    private String venue;
 }
