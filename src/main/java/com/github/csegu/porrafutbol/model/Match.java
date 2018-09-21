@@ -36,7 +36,8 @@ public class Match implements Serializable {
     @Column
     private Integer matchDay;
     
-    @Column
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false)
     private Group group;
     
     @Column
