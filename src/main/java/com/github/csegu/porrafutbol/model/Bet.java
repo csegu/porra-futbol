@@ -36,7 +36,7 @@ public class Bet implements Serializable {
     private Match match;
     
     @Column
-    private Result result;
+    private Score result;
     
     @Column
     private Integer points;

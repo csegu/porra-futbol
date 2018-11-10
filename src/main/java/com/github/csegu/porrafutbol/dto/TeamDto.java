@@ -11,4 +11,7 @@ public class TeamDto {
 
     private Long id;
     private String name;
+    private String shortName;
+    private String country;
+    private String tla;
 }

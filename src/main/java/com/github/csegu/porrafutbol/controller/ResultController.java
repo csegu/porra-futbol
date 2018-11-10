@@ -1,6 +1,6 @@
 package com.github.csegu.porrafutbol.controller;
 
-import com.github.csegu.porrafutbol.dto.ResultDto;
+import com.github.csegu.porrafutbol.dto.ScoreDto;
 import com.github.csegu.porrafutbol.service.ResultService;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ public class ResultController {
     private ResultService resultService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<ResultDto>> getAll() {
+    public ResponseEntity<List<ScoreDto>> getAll() {
          return ResponseEntity.ok(resultService.listResults());
     }
 }

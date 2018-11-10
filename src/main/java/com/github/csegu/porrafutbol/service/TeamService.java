@@ -20,7 +20,7 @@ public class TeamService {
 
     @Transactional
     public void addTeam(TeamDto teamDto) {
-        Team team = new Team(teamDto.getId(), teamDto.getName());
+        Team team = new Team(teamDto.getId(), teamDto.getName(), teamDto.getShortName(), teamDto.getCountry(), teamDto.getTla());
         teamRepository.save(team);
     }
 
@@ -39,7 +39,7 @@ public class TeamService {
     public static TeamDto map(Team team) {
         TeamDto result = null;
         if (team != null) {
-            result = new TeamDto(team.getId(), team.getName());
+            result = new TeamDto(team.getId(), team.getName(), team.getCountry(), team.getShortName(), team.getTla());
         }
         return result;
     }

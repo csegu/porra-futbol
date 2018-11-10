@@ -26,5 +26,14 @@ public class Team implements Serializable {
 
     @Column(length = 32, nullable = false, unique = true)
     private String name;
+    
+    @Column
+    private String shortName;
+    
+    @Column
+    private String country;
+    
+    @Column
+    private String tla;
 
 }

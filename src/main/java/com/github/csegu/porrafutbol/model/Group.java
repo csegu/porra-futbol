@@ -9,7 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,13 +32,13 @@ public class Group implements Serializable {
     @Column(length = 1)
     private String groupName;
 
-    @Column
+    @OneToMany
     private List<Team> groupTeams;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "group")
     private List<Match> groupMatchs;
     
-    @Column
-    private Table groupTable;
+    @OneToOne
+    private GroupTable groupTable;
 
 }

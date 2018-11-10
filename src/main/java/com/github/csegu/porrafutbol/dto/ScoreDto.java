@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResultDto {
+public class ScoreDto {
 
     private Long resultId;
     private int goalsTeam1;
