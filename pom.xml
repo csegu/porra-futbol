@@ -3,7 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.csg</groupId>
     <artifactId>porra-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>porra-parent</name>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     
     <parent>
@@ -14,21 +15,321 @@
     </parent>
     
     <modules>
+        <module>porra-provided</module>
         <module>porra-core</module>
+        <module>porra-architecture</module>
+        <module>porra-connector-footballdata</module>
     </modules>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <commitId>desconocido</commitId>
+        
+        <!-- Code generator --> 
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
+        
+        <!-- Documentation -->
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        
+        <!-- BBDD -->
+        <eclipselink.version>2.7.3</eclipselink.version>
+        
+        <!-- Utilities -->
+        <jcabi-manifests.version>1.1</jcabi-manifests.version>
+        <cxf.version>3.2.6</cxf.version>
+        <stax2-api.version>4.1</stax2-api.version><!-- Para sobreescribir la 3.1.4 -->
+        <jsoup.version>1.11.3</jsoup.version>
+        <poi.version>4.0.0</poi.version>
+        <lombok.version>1.18.2</lombok.version>
+        
+        <!-- Web -->
+        <irui-web.version>0.0.1</irui-web.version>
+        <bootstrap.version>4.1.3</bootstrap.version>
+        <angularjs.version>1.7.5</angularjs.version>
+        <jquery.version>3.3.1-1</jquery.version>
+        <font-awesome.version>5.4.1</font-awesome.version>
+        <angular-toastr.version>2.1.1</angular-toastr.version>
+        <angular-ui-bootstrap.version>2.5.0</angular-ui-bootstrap.version>
+        <popper.js.version>1.14.4</popper.js.version>
+        <angular-ui-router.version>1.0.20</angular-ui-router.version>
+        <momentjs.version>2.22.2</momentjs.version>
+        <ng-table.version>4.0.0</ng-table.version>
+        <bootstrap-daterangepicker.version>3.0.3</bootstrap-daterangepicker.version>
+        <angular-daterangepicker.version>0.2.2</angular-daterangepicker.version>
+        <chartjs.version>2.7.3</chartjs.version>
+        <angular-chart-js.version>1.1.1</angular-chart-js.version>
+        <jquery.sparkline.version>2.1.2</jquery.sparkline.version>
+        <angular-material.version>1.1.10</angular-material.version>
+        <alasql.version>0.4.11</alasql.version>
+        <xlsx.version>0.14.0</xlsx.version>
+        <commander.version>2.19.0</commander.version><!-- soluciona conflictos de versiones -->
+        
+        <!-- Java9+ -->
+        <jaxws.version>2.3.1</jaxws.version>
+        <jaxb-api.version>2.3.1</jaxb-api.version>
+        <jaxb-core.version>2.3.0.1</jaxb-core.version>
+        <jaxb-impl.version>2.3.1</jaxb-impl.version>
+        <javax-activation.version>1.1.1</javax-activation.version>
+        
+        <!-- Test -->
+        <mockito.version>2.23.0</mockito.version>
+        <greenmail.version>1.5.8</greenmail.version>
+        <junit-platform.version>1.3.1</junit-platform.version>
+        <junit-jupiter.version>5.3.1</junit-jupiter.version>
+        
+        <!-- Plugins  -->
+        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+        <docker-maven-plugin.version>1.0.0</docker-maven-plugin.version>
+        
+    </properties>
     
     <dependencyManagement>
         <dependencies>
             <!-- Modules -->
             <dependency>
                 <groupId>com.csg</groupId>
-                <artifactId>porra-core</artifactId>
+                <artifactId>porra-provided</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
             </dependency>
+            
+            <dependency>
+                <groupId>com.csg</groupId>
+                <artifactId>porra-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.csg</groupId>
+                <artifactId>porra-architecture</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.csg</groupId>
+                <artifactId>porra-connector-footballdata</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <!-- Code generator -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+			
+            <!-- Documentation -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+			
+            <!-- Utilities -->
+            <dependency>
+                <groupId>com.jcabi</groupId>
+                <artifactId>jcabi-manifests</artifactId>
+                <version>${jcabi-manifests.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-features-logging</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.woodstox</groupId>
+                <artifactId>stax2-api</artifactId>
+                <version>${stax2-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+            <!-- Apache poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+			
+            <!-- Web -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>bootstrap</artifactId>
+                <version>${bootstrap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>jquery</artifactId>
+                <version>${jquery.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angularjs</artifactId>
+                <version>${angularjs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>font-awesome</artifactId>
+                <version>${font-awesome.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angular-toastr</artifactId>
+                <version>${angular-toastr.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angular-ui-bootstrap</artifactId>
+                <version>${angular-ui-bootstrap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>popper.js</artifactId>
+                <version>${popper.js.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angular-ui-router</artifactId>
+                <version>${angular-ui-router.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>momentjs</artifactId>
+                <version>${momentjs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>ng-table</artifactId>
+                <version>${ng-table.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>bootstrap-daterangepicker</artifactId>
+                <version>${bootstrap-daterangepicker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.npm</groupId>
+                <artifactId>github-com-fragaria-angular-daterangepicker</artifactId>
+                <version>${angular-daterangepicker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>chartjs</artifactId>
+                <version>${chartjs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angular-chart.js</artifactId>
+                <version>${angular-chart-js.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>jquery.sparkline</artifactId>
+                <version>${jquery.sparkline.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angular-material</artifactId>
+                <version>${angular-material.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>alasql</artifactId>
+                <version>${alasql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.npm</groupId>
+                <artifactId>xlsx</artifactId>
+                <version>${xlsx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.npm</groupId>
+                <artifactId>commander</artifactId>
+                <version>${commander.version}</version>
+            </dependency>
+			
+            <!-- BBDD -->
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>eclipselink</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            
+            <!-- Java9+ -->
+            <dependency>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-ri</artifactId>
+                <version>${jaxws.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${jaxb-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-core</artifactId>
+                <version>${jaxb-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${jaxb-impl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>${javax-activation.version}</version>
+            </dependency>
+            
+            <!-- Testing -->
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-runner</artifactId>
+                <version>${junit-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.icegreen</groupId>
+                <artifactId>greenmail</artifactId>
+                <version>${greenmail.version}</version>
+            </dependency>
+  
         </dependencies>
     </dependencyManagement>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+
 </project>
