@@ -16,13 +16,6 @@
         <!-- Modules -->
         <dependency>
             <groupId>com.csg</groupId>
-            <artifactId>porra-provided</artifactId>
-            <scope>provided</scope>
-            <type>pom</type>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.csg</groupId>
             <artifactId>porra-architecture</artifactId>
         </dependency>
         

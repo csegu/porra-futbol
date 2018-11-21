@@ -14,13 +14,6 @@
     
     <dependencies>
         <!-- Modules -->
-        <dependency>
-            <groupId>com.csg</groupId>
-            <artifactId>porra-provided</artifactId>
-            <scope>provided</scope>
-            <type>pom</type>
-        </dependency>
-        
         <!-- Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
