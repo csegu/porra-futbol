@@ -1,4 +1,4 @@
-package com.github.csegu.porrafutbol.core;
+package com.github.csegu.porrafutbol;
 
 import com.github.csegu.porrafutbol.adapter.footballdata.model.FootballDataTeam;
 import com.github.csegu.porrafutbol.adapter.footballdata.services.FootballDataWsService;
@@ -18,8 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 @ComponentScan(lazyInit = true)
-@AllArgsConstructor(onConstructor = @__({
-    @Autowired}))
+@AllArgsConstructor(onConstructor = @__({@Autowired}))
 public class Initializer implements CommandLineRunner {
 
     private TeamRepository teamRepository;
@@ -39,9 +38,10 @@ public class Initializer implements CommandLineRunner {
 
     }
 
-    @Autowired
     private void callTeamsWs() {
         List<FootballDataTeam> teams = footballDataWsService.obtenerDetalleEquipos();
-        log.trace("Lista de equipos obtenidos por ws: {}", teams);
+        log.info("Lista de equipos obtenidos por ws: {}", teams.size());
+        teams.stream().map(FootballDataTeam::toString).forEach(log::trace);
+        
     }
 }
