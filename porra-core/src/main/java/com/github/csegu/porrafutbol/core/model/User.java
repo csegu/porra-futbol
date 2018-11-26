@@ -39,14 +39,4 @@ public class User implements Serializable {
     @Column
     private Integer userPoints;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(nullable = false)
-//    private Other other;
-
-//    @Column(nullable = false, length = 10)
-//    @Enumerated(EnumType.STRING)
-//    private OtherEnum type;
-
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
-//    private List<OtherRef> otherRef;
 }

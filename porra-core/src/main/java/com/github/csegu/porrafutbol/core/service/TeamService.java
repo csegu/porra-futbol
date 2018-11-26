@@ -17,30 +17,25 @@ import org.springframework.transaction.annotation.Transactional;
 public class TeamService {
 
     private TeamRepository teamRepository;
+    
+    private TeamMapper teamMapper;
 
     @Transactional
     public void addTeam(TeamDto teamDto) {
-        Team team = new Team(teamDto.getId(), teamDto.getName(), teamDto.getShortName(), teamDto.getCountry(), teamDto.getTla());
+        Team team = TeamMapper.MAPPER.map(teamDto);
         teamRepository.save(team);
     }
 
     public TeamDto getTeam(long id) {
-        return map(teamRepository.findTeamById(id));
+        return TeamMapper.MAPPER.map(teamRepository.findTeamById(id));
     }
 
     public TeamDto findTeam(String name) {
-        return map(teamRepository.findTeamByName(name));
+        return TeamMapper.MAPPER.map(teamRepository.findTeamByName(name));
     }
 
     public List<TeamDto> listTeams() {
-        return teamRepository.listAllTeams().stream().map(TeamService::map).collect(Collectors.toList());
+        return teamRepository.listAllTeams().stream().map(teamMapper::map).collect(Collectors.toList());
     }
 
-    public static TeamDto map(Team team) {
-        TeamDto result = null;
-        if (team != null) {
-            result = new TeamDto(team.getId(), team.getName(), team.getCountry(), team.getShortName(), team.getTla());
-        }
-        return result;
-    }
 }

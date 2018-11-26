@@ -6,9 +6,10 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class MatchController {
     private MatchService matchService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<List<MatchDto>> obtenerPartidos() {
          return ResponseEntity.ok(matchService.listMatchs());
     }
     
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public void insertarPartido(@RequestBody MatchDto matchDto) {
         matchService.addMatch(matchDto);
     }

@@ -41,17 +41,4 @@ public class Bet implements Serializable {
     @Column
     private Integer points;
   
-//    @Column(length = 10)
-//    private String name;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(nullable = false)
-//    private Other other;
-
-//    @Column(nullable = false, length = 10)
-//    @Enumerated(EnumType.STRING)
-//    private OtherEnum type;
-
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "bet")
-//    private List<OtherRef> otherRef;
 }

@@ -57,7 +57,4 @@ public class Match implements Serializable {
     @Column
     private String venue;
     
-//    private enum Stages {
-//    1ST_QUALIFYING_ROUND, 2ND_QUALIFYING_ROUND, 3RD_QUALIFYING_ROUND, 
-//            PLAY_OFF_ROUND, GROUP_STAGE, ROUND_OF_16, QUARTER_FINALS, SEMI_FINALS, FINAL};
 }

@@ -1,6 +1,8 @@
 package com.github.csegu.porrafutbol.core.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,5 +37,32 @@ public class Team implements Serializable {
     
     @Column
     private String tla;
+    
+    @Column
+    private String crestUrl;
+    
+    @Column
+    private String address;
+    
+    @Column
+    private String phone;
+    
+    @Column
+    private String website;
+    
+    @Column
+    private String email;
+    
+    @Column
+    private LocalDate founded;
+    
+    @Column
+    private String clubColors;
+    
+    @Column
+    private String venue;
+    
+    @Column
+    private LocalDateTime lastUpdated;
 
 }
