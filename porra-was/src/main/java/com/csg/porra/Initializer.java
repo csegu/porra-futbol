@@ -1,7 +1,7 @@
-package com.github.csegu.porrafutbol.core;
+package com.csg.porra;
 
 import com.github.csegu.porrafutbol.adapter.footballdata.model.FootballDataTeam;
-import com.github.csegu.porrafutbol.adapter.footballdata.services.FootballDataWsService;
+import com.github.csegu.porrafutbol.core.batch.FootballDataBatchService;
 import com.github.csegu.porrafutbol.core.repository.TeamRepository;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -22,20 +22,19 @@ public class Initializer implements CommandLineRunner {
 
     private TeamRepository teamRepository;
 
-    private FootballDataWsService footballDataWsService;
+    private FootballDataBatchService footballDataBatchService;
 
     @Override
     public void run(String... args) throws Exception {
         log.info("Application started with command-line arguments: {} . \n To kill this application, press Ctrl + C.", (Object) args);
         log.trace("Carga inicial de equipos.");
         
-        callTeamsWs();
+        callTeamsBatch();
 
     }
 
     @Autowired
-    private void callTeamsWs() {
-        List<FootballDataTeam> teams = footballDataWsService.obtenerDetalleEquipos();
-        log.trace("Lista de equipos obtenidos por ws: {}", teams);
+    private void callTeamsBatch() {
+        footballDataBatchService.updateTeams();
     }
 }

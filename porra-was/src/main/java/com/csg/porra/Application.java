@@ -1,4 +1,4 @@
-package com.github.csegu.porrafutbol.core;
+package com.csg.porra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

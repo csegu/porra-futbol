@@ -17,8 +17,14 @@
         <dependency>
             <groupId>com.csg</groupId>
             <artifactId>porra-architecture</artifactId>
+            <scope>provided</scope>
         </dependency>
-
+        
+        <!-- Utilities -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
     </dependencies>
     
     <build>
